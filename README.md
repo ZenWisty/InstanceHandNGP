@@ -13,7 +13,7 @@ hand nerf: 基于Nerf 增量手部三维数据集
 colmap输出的相机位姿（extrinsic matrix）以四元数和相机坐标来存储。注意intrinsic 的坐标系colmap文档中有介绍：The local camera coordinate system of an image is defined in a way that the X axis points to the right, the Y axis to the bottom, and the Z axis to the front as seen from the image.  
 
 ### 2. nerf训练
-一般场景训练可以直接用 nerf 对采集图像训练。拍摄极近景的（如近距离拍摄手部数据）时候，可能需要将背景剔除，以保证训练效果。如果将该数据集训练数据的背景剔除，则需要注意训练nerf 的数据最好使用RGBA的图像格式。 剔除背景我使用的方式是直接分割图像中的手部作为前景，背景置为透明。由于没有搜索到现成的好用的人手部分割项目，于是自己用 ego2hand 数据集训练了一个（后续可能需要加入更多数据集进行效果提升）另外注意，在扣除背景的图像中要使用RGBA的数据结构保存，效果：
+一般场景训练可以直接用 nerf 对采集图像训练。拍摄极近景的（如近距离拍摄手部数据）时候，可能需要将背景剔除，以保证训练效果。如果将该数据集训练数据的背景剔除，则需要注意训练nerf 的数据最好使用RGBA的图像格式。 剔除背景我使用的方式是直接分割图像中的手部作为前景，背景置为透明。由于没有搜索到现成的好用的人手部分割项目，于是自己用 ego2hand 数据集训练了一个（后续可能需要加入更多数据集进行效果提升）另外注意，在扣除背景的图像中要使用RGBA的数据结构保存，效果：<br>
 <img src="./display/2.png" alt="Image 2-1" width="40%" /><img src="./display/2-2.gif" alt="Image 2-2" width="45%"/>
 <br>"手部分割"   &&   "nerf空间中的连续轨迹渲染（连续轨迹是弱插值的）"
 上例中的每一帧渲染图的相机 intrinsic 参数为焦距flx=fly=1217.4; 图像长宽w=1920,h=1080;有opencv形式的camera distortion，k1=-0.046；k2=0。camera distortion实验中忽略，由于我们所关心的手部基本都在观测点正中央，作为plane camera 处理。
