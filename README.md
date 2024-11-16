@@ -51,6 +51,7 @@ colmap输出的相机位姿（extrinsic matrix）以四元数和相机坐标来�
 #### 3-3. 检查输出 点云坐标是否与 我们前面基于的坐标系相匹配
 <img src="./display/7-1.png" alt="Image 7-1" width="32%"/>
 <img src="./display/7-2.png" alt="Image 7-2" width="32%"/><br>
+
 #### 3-4. 手部数据增量
 手部数据增量方式：旋转，平移；<br>
 假设相机不动：<br>
