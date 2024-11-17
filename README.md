@@ -65,7 +65,7 @@ nerf训练工程基于https://github.com/NVlabs/tiny-cuda-nn 构建，坐标系�
 ## 后续工作
 ### 手关键点定位网络训练
 
->利用本文造出来的数据进行多输入的点定位网络的研发。讨论可行方案，并给出当前方案
+>利用本文造出来的数据进行多视角输入的点定位网络的研发。讨论可行方案，并给出当前方案
 
 [Neural Network Architect Discuss](doc/3DDetrNet.md)
 
